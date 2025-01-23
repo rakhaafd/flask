@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <div class="welcome">
+    <h2>Hello i'm Raku</h2>
+    <h4>Student in Vocational Highschool 7 Semarang</h4>
+
+    <p>My Python Skill: <strong>{{ value }}</strong></p>
+
+    <h4>My Language: </h4>
+    {% for language in lang%}
+    <li>{{ language }}</li>
+    {% endfor %}
+</div>
+
+    <div class="list">
+        {% if girl == "Park Gyu"%}
+        <p>That's My Babe</p>
+        {% elif girl == "Wonjian"%}
+        <p>That's My Second Wife</p>
+        {% else %}
+        <p>I'm Sadd</p>
+        {% endif %}
+    </div>
+
+    <div class="set variable">
+        {% set class = "Shadow Monarch/SSS+ Tier Hunter" %}
+        <p>My Tittle is: {{ class }}</p>
+    </div>
+
+    <div class="lang">
+        {% for language in lang %}
+        {% if language == "Python" %}
+        <h4>If You Mastering {{ lang[1] }}, You're the Goated One!</h4>
+        {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>
