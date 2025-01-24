@@ -55,6 +55,20 @@ def logout_account():
     else:
         return redirect(url_for('index'))
 
+@app.route('/table')
+def show_table():
+    if "email" not in session:
+        flash("You must login first", "error")
+        return redirect(url_for('index'))
+    
+    my_social_media = {
+        "Instagram" : ["@rakhaafd", "@rakuu.bash"],
+        "Github" : ["rakhaafd"],
+        "Youtube" : ["rakuubash"],
+        "Linkedin" : ["Rakha Fausta"]
+    }
+    return render_template("table.html", socialmed=my_social_media)
+
 @app.route("/redirect-about")
 def redirect_about():
     return redirect(url_for("about"))

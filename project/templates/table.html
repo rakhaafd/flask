@@ -1,0 +1,31 @@
+{% extends "main_layout.html" %}
+{% block content %}
+    <div class="text-center">
+        <h2 class="mb-4">Follow Me!✨</h2>
+        
+        <!-- Tabel dengan lebar penuh dan responsif -->
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                        <th class="bg-primary text-white">Platform</th>
+                        <th class="bg-secondary text-white">Account</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for platform, accounts in socialmed.items() %}
+                        <tr>
+                            <td>{{ platform }}</td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    {% for account in accounts %}
+                                        <li>{{ account }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
