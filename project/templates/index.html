@@ -1,4 +1,29 @@
 {% extends "main_layout.html" %}
 {% block content %}
-<h2>This is Index</h2>
+<div class="container mt-5">
+  <!-- Tampilkan Flash Messages -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+          {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">
+                  {{ message }}
+              </div>
+          {% endfor %}
+      {% endif %}
+  {% endwith %}
+</div>
+<div class="form">
+<h2 class="mb-5">Login</h2>
+<form action="" method="post">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary mt-5">Submit</button>
+  </form>
+</div>
 {% endblock %}
