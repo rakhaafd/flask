@@ -17,6 +17,7 @@ def index():
             session['password'] = password
             return redirect(url_for('success_req'))
         else:
+            flash("Your Email and Password is Wrong!", "error")
             return redirect(url_for('index'))
         
     return render_template("index.html")
